@@ -1,0 +1,13 @@
+[Unit]
+Description=Local Etherpad Website
+After=syslog.target network.target
+ 
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/etherpad-lite/
+ExecStart=/usr/bin/nodejs /home/pi/etherpad-lite/node_modules/ep_etherpad-lite/node/server.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
